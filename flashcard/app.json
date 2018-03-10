@@ -1,0 +1,20 @@
+{
+  "expo": {
+    "sdkVersion": "25.0.0",
+    "orientation": "portrait",
+    "name": "FlashCards Udacity",
+    "description": "Um app para estudar questionários.",
+    "slug": "razborges-udacity-flashcard",
+    "version": "1.0",
+    "icon": "https://png.icons8.com/ios/20x/saving-book-filled.png",
+    "notification": {
+      "icon": "https://png.icons8.com/ios/20x/saving-book-filled.png"
+    },
+    "ios": {
+      "bundleIdentifier": "br.com.flashcards.razborges"
+    },
+    "android": {
+      "package": "br.com.flashcards.razborges"
+    }
+  }
+}
