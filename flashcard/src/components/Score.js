@@ -14,13 +14,13 @@ const Score = ({ correct, total, handleReset, handleGoBack }) => (
           onPress={handleGoBack}
           style={{backgroundColor: colors.charlestonGreen}}
         >
-            ACRESCENTAR CARDS
+            RETORNAR AO BARALHO
         </AppButton>
 
         <AppButton
           onPress={handleReset}
         >
-            RESPONDER NOVAMENTE
+            REINICIAR QUIZ
         </AppButton>
       </View>
 

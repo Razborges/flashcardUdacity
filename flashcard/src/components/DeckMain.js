@@ -38,18 +38,18 @@ class DeckMain extends Component {
 
         <View style={styles.viewInfo}>
           <Text style={styles.title}>{`${deck.title}`.toUpperCase()}</Text>
-          <Text style={styles.infoTxt}>{deck.questions.length} CARDS</Text>
+          <Text style={styles.infoTxt}>{deck.questions.length} CARTAS</Text>
         </View>
 
         <View style={styles.viewBtn}>
           <AppButton style={{backgroundColor: colors.charlestonGreen}}
             onPress={this.handleAddCard}>
-              ADICIONAR CARD
+              ADICIONAR CARTA
           </AppButton>
 
           <AppButton style={{backgroundColor: Platform.OS === 'ios' ? colors.tangerine : colors.androidGreen}}
             onPress={this.handleQuiz}>
-              INICIAR ESTUDO
+              INICIAR QUIZ
           </AppButton>
         </View>
 

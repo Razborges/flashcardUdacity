@@ -63,7 +63,7 @@ class NewCard extends Component {
     return (
       <View style={styles.container}>
         <Text style={[styles.marginBase, styles.txt]}>
-          Pergunta do seu card:
+          Qual a pergunta desta carta?
         </Text>
         
         <TextInput
@@ -87,7 +87,7 @@ class NewCard extends Component {
         <AppButton
           style={[styles.marginBase, {backgroundColor: colors.blueMunsell}]}
           onPress={this.save}>
-            ADICIONAR
+            ADICIONAR CARTA
         </AppButton>
       </View>
     )

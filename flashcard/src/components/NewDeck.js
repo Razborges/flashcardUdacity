@@ -21,12 +21,12 @@ class NewDeck extends Component {
     const existingDeckNames = Object.keys(decks).map(title => title.toLowerCase())
 
     if(!deckName || !deckName.length) {
-      return alert('Você precisa dar um nome para o Deck.')
+      return alert('Você precisa dar um nome para o baralho!')
     }
 
     if(existingDeckNames.indexOf(deckName.toLowerCase()) !== -1) {
       this.setState(() => ({ deckName: '' }))
-      return alert('Você já tem um deck com este nome!')
+      return alert('Você já tem um baralho com este nome!')
     }
 
     this.props.dispatch(
@@ -46,7 +46,7 @@ class NewDeck extends Component {
       <View style={styles.container}>
         <View style={styles.viewCard}>
           <Text style={[styles.marginBase, styles.txt]}>
-            Qual o nome deste deck?
+            Qual o nome deste baralho?
           </Text>
           
           <TextInput
@@ -60,7 +60,7 @@ class NewDeck extends Component {
         <AppButton
           style={[styles.marginBase, {backgroundColor: colors.blueMunsell}]}
           onPress={this.save}>
-            ADICIONAR
+            CRIAR BARALHO
         </AppButton>
       </View>
     )

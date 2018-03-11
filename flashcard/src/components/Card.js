@@ -10,7 +10,6 @@ class Card extends Component {
   };
 
   componentWillReceiveProps(nextProps) {
-    // ensure that new cards always have question showing first
     if(nextProps.position != this.state.position) {
       this.setState({
         showQuestion: true,
@@ -43,6 +42,11 @@ class Card extends Component {
           <View style={styles.question}>
             <Text style={showQuestion ? styles.txtQuestion : styles.txtAnswer}>
               { cardText }
+            </Text>
+          </View>
+          <View>
+            <Text style={styles.position}>
+              Clique na carta para mostrar a resposta.
             </Text>
           </View>
         </TouchableOpacity>

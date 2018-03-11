@@ -43,7 +43,7 @@ class DeckList extends Component {
                   <View style={styles.viewInfo}>
                     <View>
                       <Text style={styles.titleCard}>{`${deck.title}`.toUpperCase()}</Text>
-                      <Text style={styles.infoCard}>{deck.questions.length} CARDS</Text>
+                      <Text style={styles.infoCard}>{deck.questions.length} CARTAS</Text>
                     </View>
                     {Platform.OS === 'ios' ?
                       <MaterialCommunityIcons name="chevron-right" size={30} color={colors.charlestonGreen} />
@@ -55,7 +55,7 @@ class DeckList extends Component {
             )) :
             <View style={[styles.container, {margin: 20, alignSelf: 'center'} ]}>
               <Text style={styles.titleCard}>
-                  Nenhum deck cadastrado ainda!!!
+                  Nenhum baralho cadastrado ainda!!!
               </Text>
             </View>
         }

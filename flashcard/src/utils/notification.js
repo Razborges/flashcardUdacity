@@ -11,7 +11,7 @@ export function clearLocalNotification () {
 function createNotification() {
   return {
     title: 'Hora de estudar!',
-    body: "Vamos estudar seus cards?",
+    body: "Vamos estudar algumas cartas?",
     ios: {
       sound: true,
     },

@@ -13,14 +13,14 @@ const Tabs = TabNavigator({
   DeckList: {
     screen: DeckList,
     navigationOptions: {
-      tabBarLabel: 'DECKS',
+      tabBarLabel: 'BARALHOS',
       tabBarIcon: ({ tintColor }) => <Entypo name='documents' size={25} color={tintColor} />
     }
   },
   NewDeck: {
     screen: NewDeck,
     navigationOptions: {
-      tabBarLabel: 'NOVO DECK',
+      tabBarLabel: 'NOVO BARALHO',
       tabBarIcon: ({ tintColor }) => <Entypo name='plus' size={30} color={tintColor} />
     }
   },
@@ -110,7 +110,7 @@ const MainNavigation = StackNavigator({
   NewCard: {
     screen: NewCard,
     navigationOptions: ({navigation}) => ({
-      title: 'NOVO CARD',
+      title: 'NOVA CARTA',
       headerTintColor: Platform.OS === 'ios' ? colors.tangerine : colors.androidGreen,
       headerStyle:
         Platform.OS === 'ios' ? {
