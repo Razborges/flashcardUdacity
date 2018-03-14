@@ -5,7 +5,6 @@ import { AppLoading } from 'expo';
 import { MaterialCommunityIcons, FontAwesome } from '@expo/vector-icons';
 import { loadingDecks } from '../actions';
 import { getDecks } from '../utils/storage';
-import { clearLocalNotification, setLocalNotification } from '../utils/notification';
 import { colors } from '../utils/constants';
 import AppButton from './AppButton'
 
@@ -20,8 +19,6 @@ class DeckList extends Component {
         this.props.dispatch(loadingDecks(decks))
       })
       .then(() => this.setState(() => ({ready: true})))
-      .then(clearLocalNotification)
-      .then(setLocalNotification)
   };
 
   render() {

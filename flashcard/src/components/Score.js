@@ -1,31 +1,50 @@
-import React from 'react';
+import React, { Component } from 'react';
+import Proptypes from 'prop-types';
 import { View, Text, StyleSheet } from 'react-native';
 import { colors } from '../utils/constants';
 import AppButton from './AppButton';
+import { clearLocalNotification, setLocalNotification } from '../utils/notification';
 
-const Score = ({ correct, total, handleReset, handleGoBack }) => (
-    <View style={styles.container}>
-      <Text style={styles.message}>
-        Você acertou { correct.toFixed(0) } de um total de { total.toFixed(0) } perguntas.
-      </Text>
+class Score extends Component {
 
-      <View style={styles.viewBtn}>
-        <AppButton
-          onPress={handleGoBack}
-          style={{backgroundColor: colors.charlestonGreen}}
-        >
-            RETORNAR AO BARALHO
-        </AppButton>
+  componentDidMount() {
+    clearLocalNotification()
+      .then(setLocalNotification())
+  }
 
-        <AppButton
-          onPress={handleReset}
-        >
-            REINICIAR QUIZ
-        </AppButton>
+  render() {
+    return (
+      <View style={styles.container}>
+        <Text style={styles.message}>
+          Você acertou { this.props.correct.toFixed(0) } de um total de { this.props.total.toFixed(0) } perguntas.
+        </Text>
+
+        <View style={styles.viewBtn}>
+          <AppButton
+            onPress={this.props.handleGoBack}
+            style={{backgroundColor: colors.charlestonGreen}}
+          >
+              RETORNAR AO BARALHO
+          </AppButton>
+
+          <AppButton
+            onPress={this.props.handleReset}
+          >
+              REINICIAR QUIZ
+          </AppButton>
+        </View>
+
       </View>
+    )
+  }
+}
 
-    </View>
-);
+Score.proptypes = {
+  correct: Proptypes.number.isRequired,
+  total: Proptypes.number.isRequired,
+  handleGoBack: Proptypes.func.isRequired,
+  handleReset: Proptypes.func.isRequired,
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -44,5 +63,9 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   }
 })
+
+// const mapStateToProps = ({ correct, total, handleReset, handleGoBack })
+
+// export default connect(mapStateToProps,)(Score);
 
 export default Score;
